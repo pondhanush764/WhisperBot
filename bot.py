@@ -20,7 +20,7 @@ db = {}
 @bot.on(events.NewMessage(pattern="^[!?/]start$"))
 async def stsrt(event):
     await event.reply(
-            "**Heya, I am a Whisper Bot!**",
+            "**Heya, I am a Secrey Bot!**",
             buttons=[
                 [Button.switch_inline("Go Inline", query="")]
                 ]
@@ -33,9 +33,9 @@ async def die(event):
         return
     me = (await bot.get_me()).username
     dn = event.builder.article(
-            title="It's a whisper bot!",
-            description="It's a whisper Bot!\n(c) Reeshuxd",
-            text=f"**It's a whisper bot**\n`@{me} wspr UserID|Message`\n**(c) Reeshuxd**",
+            title="It's a Secret bot!",
+            description="It's a Secret Bot!\n(c) Reeshuxd",
+            text=f"**It's a Secret bot**\n`@{me} wspr UserID|Message`\n**(c) Reeshuxd**",
             buttons=[
                 [Button.switch_inline(" Go Inline ", query="wspr ")]
                 ]
@@ -71,9 +71,9 @@ async def inline(event):
         return
     db.update({"user_id": ui.user.id, "msg": msg, "self": event.sender.id})
     text = f"""
-A Whisper Has Been Sent
-To [{ui.user.first_name}](tg://user?id={ui.user.id})!
-Click The Below Button To See The Message!
+A Ragasiya message Has Been Sent
+To [{ui.user.first_name}](tg://user?id={ui.user.id}) 🤣!
+ செய்தியைப் பார்க்க கீழே உள்ள Button ஐ கிளிக் செய்யவும்😒!
 **Note:** __Only {ui.user.first_name} can open this!__
     """
     dn = event.builder.article(
@@ -81,7 +81,7 @@ Click The Below Button To See The Message!
             description="It's a secret message! Sssh!",
             text=text,
             buttons=[
-                [Button.inline(" Show Message! ", data="wspr")]
+                [Button.inline("Ragasiya message🤫! ", data="wspr")]
                 ]
             )
     await event.answer(
@@ -97,7 +97,7 @@ async def ws(event):
     lol = [int(db["self"])]
     lol.append(user)
     if event.sender.id not in lol:
-        await event.answer("🔐 This message is not for you!", alert=True)
+        await event.answer("ஏய் 😡, இந்த செய்தி உங்களுக்காக அல்ல🤣 மற்றவர்களின் செயல்பாட்டில் உங்கள் மூக்கை நுலைக்காதீற்கள்!", alert=True)
         return
     msg = db["msg"]
     if msg == []:
