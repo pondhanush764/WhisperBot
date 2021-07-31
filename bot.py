@@ -20,9 +20,10 @@ db = {}
 @bot.on(events.NewMessage(pattern="^[!?/]start$"))
 async def stsrt(event):
     await event.reply(
-            "**Heya, I am a Secrey Bot!**",
+            "**வணக்கம், நான் ரகசிய போட்🤫. கீழே உள்ள buttonகளைக் கிளிக் செய்து என்னை முயற்சிக்கவும்😝!**",
             buttons=[
-                [Button.switch_inline("Go Inline", query="")]
+                [Button.switch_inline("Go Inline", query="")],
+                [Button.url("Support🥰"), query="t.me/kittysupport")]
                 ]
             )
 
