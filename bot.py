@@ -22,8 +22,7 @@ async def stsrt(event):
     await event.reply(
             "**வணக்கம், நான் ரகசிய போட்🤫. கீழே உள்ள buttonகளைக் கிளிக் செய்து என்னை முயற்சிக்கவும்😝!**",
             buttons=[
-                [Button.switch_inline("Go Inline", query="")],
-                [InlineKeyboardButton(text="Support🥰", url="t.me/kittysupport")]
+                [Button.switch_inline("Try whisper😉", query="")]
                 ]
             )
 
